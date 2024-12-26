@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Vazir';
+  src: url('../assets/fonts/Vazir-FD-WOL.ttf') format('truetype');
+}
+
+html,
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazir', sans-serif;
+  direction: rtl;
+  width: 100%;
+}
