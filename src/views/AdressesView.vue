@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import AddressContent from '@/components/addresses-page/AddressContent.vue'
+</script>
+
 <template>
-  <h1>Adresses</h1>
+  <AddressContent />
 </template>

@@ -27,13 +27,17 @@ import LOGO from '../../assets/images/achare.svg'
 
 <style scoped>
 .app-header {
-  height: 48px;
+  height: 58px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .app-header img {
