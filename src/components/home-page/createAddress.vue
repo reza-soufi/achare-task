@@ -1,10 +1,13 @@
+<script lang="ts" setup>
+import CreateAddressForm from '@/components/home-page/CreateAddressForm.vue'
+</script>
+
 <template>
   <div class="container">
     <p class="topic">لطفا مشخصات و آدرس خود را وارد کنید</p>
+    <CreateAddressForm />
   </div>
 </template>
-
-<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 .container {
@@ -17,6 +20,9 @@
     font-size: 12px;
     color: #37474f;
     font-weight: 700;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 22px 48px;
   }
 }
 </style>

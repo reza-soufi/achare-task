@@ -8,3 +8,4 @@
 - [Vue Router](https://router.vuejs.org/)
 - [Axios](https://axios-http.com/)
 - [Sass](https://sass-lang.com/)
+- [FormKit](https://formkit.com/)

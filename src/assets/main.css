@@ -7,9 +7,69 @@ html,
 body {
   background-color: #f5f5f5;
   margin: 0;
-  padding: 0;
   font-family: 'Vazir', sans-serif;
   direction: rtl;
   width: 100%;
-  padding-top: 30px;
+  padding: 30px 0 0;
+}
+
+div.formkit-actions {
+  display: none !important;
+}
+.formkit-inner .formkit-input[type="text"] {
+  width: 96%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 40px;
+  margin-top: 9px;
+}
+.formkit-label {
+  font-size: 12px;
+  color: #37474f;
+  font-weight: 500;
+}
+.input_container {
+  margin-top: 26px;
+}
+
+
+.formkit-message{
+  font-size: 10px;
+  color: #E61236;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.formkit-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+.formkit-options{
+  display: flex;
+  gap: 15px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .formkit-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+ .input_container{
+   width: 30%;
+ }
+  .input_container.address_input{
+    width: 65%;
+  }
 }

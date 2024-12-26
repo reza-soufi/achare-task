@@ -22,3 +22,12 @@ export interface AddressType {
   coordinate_mobile: string
   coordinate_phone_number: string
 }
+
+export interface AddressFormType {
+  first_name: string
+  last_name: string
+  gender: string
+  address: string
+  coordinate_mobile: string
+  coordinate_phone_number: string
+}
