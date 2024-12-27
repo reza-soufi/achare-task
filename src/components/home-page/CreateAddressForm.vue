@@ -8,6 +8,14 @@ const loading = ref(false)
 
 const successSubmit = inject<Ref<boolean, boolean>>('successSubmit')
 
+const validateMinLength = ({ value }: { value: string }) => {
+  return value.length >= 3
+}
+
+const validateAddress = ({ value }: { value: string }) => {
+  return value.length >= 10
+}
+
 const submitHandler = async (values: AddressFormType) => {
   loading.value = true
   await axios
@@ -32,8 +40,11 @@ const submitHandler = async (values: AddressFormType) => {
         name="first_name"
         label="نام"
         placeholder="مثال: علی"
-        validation="required"
-        :validation-messages="{ required: 'نام را وارد کنید' }"
+        :validation="[['required'], [validateMinLength as any]]"
+        :validation-messages="{
+          required: 'نام را وارد کنید',
+          validateMinLength: 'نام باید حداقل ۳ کاراکتر باشد',
+        }"
       />
     </div>
     <div class="input_container">
@@ -42,8 +53,11 @@ const submitHandler = async (values: AddressFormType) => {
         name="last_name"
         label="نام خانوادگی "
         placeholder="مثال: محمدی"
-        validation="required"
-        :validation-messages="{ required: 'نام خانوادگی را وارد کنید' }"
+        :validation="[['required'], [validateMinLength as any]]"
+        :validation-messages="{
+          required: 'نام خانوادگی را وارد کنید',
+          validateMinLength: 'نام خانوادگی باید حداقل ۳ کاراکتر باشد',
+        }"
       />
     </div>
     <div class="input_container">
@@ -69,8 +83,11 @@ const submitHandler = async (values: AddressFormType) => {
         type="text"
         name="address"
         label="آدرس"
-        validation="required"
-        :validation-messages="{ required: 'آدرس را وارد کنید' }"
+        :validation="[['required'], [validateAddress as any]]"
+        :validation-messages="{
+          required: 'آدرس را وارد کنید',
+          validateAddress: 'آدرس باید حداقل ۱۰ کاراکتر باشد',
+        }"
       />
     </div>
     <div class="gender">

@@ -34,10 +34,12 @@ div.formkit-actions {
   border-radius: 4px;
   font-size: 14px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .formkit-input[type='submit']:disabled {
   background-color: #9b9b9b;
+  cursor: not-allowed;
 }
 
 .formkit-label {
