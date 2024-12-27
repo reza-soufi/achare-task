@@ -65,4 +65,10 @@ import LOGO from '../../assets/images/achare.svg'
 .exact-active-link {
   color: #37474f;
 }
+
+@media screen and (min-width: 768px) {
+  .app-header {
+    padding: 0 48px;
+  }
+}
 </style>

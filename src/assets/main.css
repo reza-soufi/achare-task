@@ -16,7 +16,7 @@ body {
 div.formkit-actions {
   display: none !important;
 }
-.formkit-inner .formkit-input[type="text"] {
+.formkit-inner .formkit-input[type='text'] {
   width: 96%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -24,6 +24,22 @@ div.formkit-actions {
   height: 40px;
   margin-top: 9px;
 }
+
+.formkit-input[type='submit'] {
+  width: 343px;
+  height: 48px;
+  background-color: #00bfa5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.formkit-input[type='submit']:disabled {
+  background-color: #9b9b9b;
+}
+
 .formkit-label {
   font-size: 12px;
   color: #37474f;
@@ -33,12 +49,15 @@ div.formkit-actions {
   margin-top: 26px;
 }
 
-
-.formkit-message{
+.formkit-message {
   font-size: 10px;
-  color: #E61236;
+  color: #e61236;
   font-weight: 400;
   margin-top: 5px;
+}
+
+#input_0-incomplete {
+  display: none;
 }
 
 .formkit-fieldset {
@@ -49,27 +68,27 @@ div.formkit-actions {
   gap: 8px;
   width: 100%;
 }
-.formkit-options{
+.formkit-options {
   display: flex;
   gap: 15px;
 }
 
-ul{
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 @media screen and (min-width: 768px) {
-  .formkit-form{
+  .formkit-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
- .input_container{
-   width: 30%;
- }
-  .input_container.address_input{
+  .input_container {
+    width: 30%;
+  }
+  .input_container.address_input {
     width: 65%;
   }
 }

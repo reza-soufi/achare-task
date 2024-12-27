@@ -86,21 +86,8 @@ const submitHandler = async (values: AddressFormType) => {
       />
     </div>
     <div class="submit-btn">
-      <FormKit
-        type="submit"
-        style="
-          width: 343px;
-          height: 48px;
-          background-color: #00bfa5;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          font-size: 14px;
-          font-weight: 700;
-        "
-        :disabled="loading"
-      >
-        ثبت و ادامه
+      <FormKit type="submit" :disabled="loading">
+        {{ loading ? 'لطفا صبر کنید' : 'ثبت و ادامه ' }}
       </FormKit>
     </div>
   </FormKit>
