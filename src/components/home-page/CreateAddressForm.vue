@@ -3,6 +3,7 @@ import type { AddressFormType } from '@/types/addressType'
 import axios from 'axios'
 import type { Ref } from 'vue'
 import { inject, ref } from 'vue'
+import { toast } from 'vue3-toastify'
 
 const loading = ref(false)
 
@@ -27,6 +28,9 @@ const submitHandler = async (values: AddressFormType) => {
     })
     .then(() => {
       if (successSubmit) successSubmit.value = true
+    })
+    .catch(() => {
+      toast.error('خطا در ثبت آدرس')
     })
     .finally(() => (loading.value = false))
 }

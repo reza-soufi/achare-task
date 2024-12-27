@@ -4,6 +4,7 @@ import AddressItem from './AddressItem.vue'
 import axios from 'axios'
 import { ref } from 'vue'
 import LoadingSppinar from '@/shared/components/LoadingSppinar.vue'
+import { toast } from 'vue3-toastify'
 
 const addresses = ref<AddressType[]>([])
 const loading = ref(false)
@@ -19,7 +20,11 @@ const getAddresses = async () => {
   addresses.value = response.data
 }
 
-getAddresses().finally(() => (loading.value = false))
+getAddresses()
+  .catch(() => {
+    toast.error('خطا در دریافت آدرس ها')
+  })
+  .finally(() => (loading.value = false))
 </script>
 
 <template>

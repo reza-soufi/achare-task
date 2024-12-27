@@ -9,3 +9,4 @@
 - [Axios](https://axios-http.com/)
 - [Sass](https://sass-lang.com/)
 - [FormKit](https://formkit.com/)
+- [Vue Toastify](https://vue-toastification.com/)
