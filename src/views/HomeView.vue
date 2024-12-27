@@ -2,8 +2,14 @@
 import CreateAddress from '@/components/home-page/createAddress.vue'
 import { ref, provide } from 'vue'
 import SuccessSubmiting from '@/components/home-page/SuccessSubmiting.vue'
+import UserLocation from '@/components/home-page/UserLocation.vue'
+import type { AddressFormType } from '@/types/addressType'
 const successSubmit = ref<boolean>(false)
+const showMap = ref<boolean>(false)
+const addressValues = ref({} as AddressFormType)
 provide('successSubmit', successSubmit)
+provide('showMap', showMap)
+provide('addressValues', addressValues)
 </script>
 
 <template>
@@ -12,7 +18,10 @@ provide('successSubmit', successSubmit)
       <div class="title">ثبت آدرس</div>
       <CreateAddress />
     </div>
-    <div v-else>
+    <div v-else-if="successSubmit && !showMap">
+      <UserLocation />
+    </div>
+    <div v-if="showMap">
       <SuccessSubmiting />
     </div>
   </main>

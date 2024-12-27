@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import type { AddressFormType } from '@/types/addressType'
-import axios from 'axios'
 import type { Ref } from 'vue'
-import { inject, ref } from 'vue'
-import { toast } from 'vue3-toastify'
-
-const loading = ref(false)
+import { inject } from 'vue'
 
 const successSubmit = inject<Ref<boolean, boolean>>('successSubmit')
+const addressValues = inject<Ref<AddressFormType>>('addressValues')
 
 const validateMinLength = ({ value }: { value: string }) => {
   return value.length >= 3
@@ -18,21 +15,8 @@ const validateAddress = ({ value }: { value: string }) => {
 }
 
 const submitHandler = async (values: AddressFormType) => {
-  loading.value = true
-  await axios
-    .post('https://stage.achareh.ir/api/karfarmas/address', values, {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Basic MDk4MjIyMjIyMjI6U2FuYTEyMzQ1Njc4',
-      },
-    })
-    .then(() => {
-      if (successSubmit) successSubmit.value = true
-    })
-    .catch(() => {
-      toast.error('خطا در ثبت آدرس')
-    })
-    .finally(() => (loading.value = false))
+  if (addressValues) addressValues.value = values
+  if (successSubmit) successSubmit.value = true
 }
 </script>
 
@@ -107,9 +91,7 @@ const submitHandler = async (values: AddressFormType) => {
       />
     </div>
     <div class="submit-btn">
-      <FormKit type="submit" :disabled="loading">
-        {{ loading ? 'لطفا صبر کنید' : 'ثبت و ادامه ' }}
-      </FormKit>
+      <FormKit type="submit"> ثبت و ادامه </FormKit>
     </div>
   </FormKit>
 </template>
