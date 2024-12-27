@@ -4,6 +4,8 @@ import AppHeader from './shared/layout/AppHeader.vue'
 </script>
 
 <template>
-  <AppHeader />
-  <RouterView />
+  <ErrorBoundry>
+    <AppHeader />
+    <RouterView />
+  </ErrorBoundry>
 </template>
